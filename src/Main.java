@@ -45,6 +45,9 @@ public class Main {
         for (Transport allTransportCars : allTransportCar){
             info(allTransportCars);
         }
+        ServiseStation serviceStation = new ServiseStation();
+        serviceStation.addTransportQueue(lada);
+        serviceStation.service();
 
 
 
