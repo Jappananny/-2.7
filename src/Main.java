@@ -4,10 +4,7 @@ import Draiver.DriverLicensesB;
 import Draiver.DriverLicensesC;
 import TransportPack.*;
 
-import java.util.ArrayDeque;
-import java.util.List;
-import java.util.Queue;
-import java.util.Random;
+import java.util.*;
 
 
 public class Main {
@@ -86,6 +83,9 @@ public class Main {
         System.out.println(queue1);
         System.out.println(queue2);
 
+        example();
+
+
 
     }
     private static void info(Transport allTransportCar){
@@ -96,6 +96,22 @@ public class Main {
         int size = RANDOM.nextInt(MAX_SIZE+1);
         for (int i = 0; i < size; i++ ){
             queue.offer(NAME.get(RANDOM.nextInt(NAME.size())));
+        }
+    }
+    private static void example() {
+        List<List<String>> biDemArrList = new ArrayList<>();
+        for (int i = 0; i < 8; i++) {
+            biDemArrList.add(i, new ArrayList<>());
+            for (int j = 0; j < 8; j++) {
+                biDemArrList.get(i).add(j, ((i+j) %2==1?"●" : "◯"));;
+            }
+        }
+
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                System.out.print(biDemArrList.get(i).get(j) + " ");
+            }
+            System.out.println();
         }
     }
     private static void add(String name, Queue<String> queue1, Queue<String> queue2) {
